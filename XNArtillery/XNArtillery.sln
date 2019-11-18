@@ -1,0 +1,42 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XNArtillery", "XNArtillery\XNArtillery\XNArtillery.csproj", "{45997D26-2D13-4E5C-8286-FF196998C75E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XNArtilleryContent", "XNArtillery\XNArtilleryContent\XNArtilleryContent.contentproj", "{AD5B95B3-5299-4ED3-86FF-E4952EB0776B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ByloDraw2D", "..\ByloDraw2D\ByloDraw2D.csproj", "{07301C3C-7B48-4621-8637-7A9869FCA7D7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ByloEngine", "..\ByloEngine\ByloEngine.csproj", "{4E4F2CA8-D3CC-45E7-85B9-2ADE4C7126BA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XNvironment2D", "..\XNvironment2D\XNvironment2D.csproj", "{9DF12CE4-6AA8-4701-BA8F-1FA9FCD9E602}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{45997D26-2D13-4E5C-8286-FF196998C75E}.Debug|x86.ActiveCfg = Debug|x86
+		{45997D26-2D13-4E5C-8286-FF196998C75E}.Debug|x86.Build.0 = Debug|x86
+		{45997D26-2D13-4E5C-8286-FF196998C75E}.Release|x86.ActiveCfg = Release|x86
+		{45997D26-2D13-4E5C-8286-FF196998C75E}.Release|x86.Build.0 = Release|x86
+		{AD5B95B3-5299-4ED3-86FF-E4952EB0776B}.Debug|x86.ActiveCfg = Debug|x86
+		{AD5B95B3-5299-4ED3-86FF-E4952EB0776B}.Release|x86.ActiveCfg = Release|x86
+		{07301C3C-7B48-4621-8637-7A9869FCA7D7}.Debug|x86.ActiveCfg = Debug|x86
+		{07301C3C-7B48-4621-8637-7A9869FCA7D7}.Debug|x86.Build.0 = Debug|x86
+		{07301C3C-7B48-4621-8637-7A9869FCA7D7}.Release|x86.ActiveCfg = Release|x86
+		{07301C3C-7B48-4621-8637-7A9869FCA7D7}.Release|x86.Build.0 = Release|x86
+		{4E4F2CA8-D3CC-45E7-85B9-2ADE4C7126BA}.Debug|x86.ActiveCfg = Debug|x86
+		{4E4F2CA8-D3CC-45E7-85B9-2ADE4C7126BA}.Debug|x86.Build.0 = Debug|x86
+		{4E4F2CA8-D3CC-45E7-85B9-2ADE4C7126BA}.Release|x86.ActiveCfg = Release|x86
+		{4E4F2CA8-D3CC-45E7-85B9-2ADE4C7126BA}.Release|x86.Build.0 = Release|x86
+		{9DF12CE4-6AA8-4701-BA8F-1FA9FCD9E602}.Debug|x86.ActiveCfg = Debug|x86
+		{9DF12CE4-6AA8-4701-BA8F-1FA9FCD9E602}.Debug|x86.Build.0 = Debug|x86
+		{9DF12CE4-6AA8-4701-BA8F-1FA9FCD9E602}.Release|x86.ActiveCfg = Release|x86
+		{9DF12CE4-6AA8-4701-BA8F-1FA9FCD9E602}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
