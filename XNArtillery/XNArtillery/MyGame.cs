@@ -1,107 +1,156 @@
-//Iniziato a programmare il 22 Maggio 2012: Interrotto per una futura ripresa del progetto!
+//Codice di Bilotta Matteo; Copyright© 2011; Iniziato a programmare il 29 Settembre 2011.
 
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using Microsoft.Xna.Framework;
-//using Microsoft.Xna.Framework.Audio;
-using Microsoft.Xna.Framework.Content;
-//using Microsoft.Xna.Framework.GamerServices;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+
+//using Microsoft.Xna.Framework.Audio;
+//using Microsoft.Xna.Framework.Content;
+//using Microsoft.Xna.Framework.GamerServices;
 //using Microsoft.Xna.Framework.Media;
-
-using XNArtillery.Background;
-using XNArtillery.Effects;
-using XNArtillery.Engine;
-using XNArtillery.Game;
-
-using ByloEngine;
 
 namespace XNArtillery
 {
+    enum GameStates
+    {
+        Menu,
+        NewMatch,
+        Match
+    }
+
     public class MyGame : Microsoft.Xna.Framework.Game
     {
-        private Shade shade;
+        private GraphicsDeviceManager graphicsDeviceManager;
+        private SpriteBatch spriteBatch;
+
+        private MouseState mouseState;
+        private KeyboardState keyboardState;
+
+        private GameStates state;
+
         private Sky sky;
+
+        private Shade shade;
+        private Color light;
+
+        private Menu menu;
         private Match match;
-        private Music music;
+        private MatchSettings lastMatchSettings;
 
         public MyGame()
         {
             IsMouseVisible = true;
-
-            Global.IsRunning = true;
-            Global.ThisGame = this;
-            Global.MyGraphics = new Graphics();
-            Global.SetResolution();
-
             Content.RootDirectory = "Content";
+
+            graphicsDeviceManager = new GraphicsDeviceManager(this);
+            graphicsDeviceManager.PreferredBackBufferWidth = Global.resolution.X;
+            graphicsDeviceManager.PreferredBackBufferHeight = Global.resolution.Y;
+            graphicsDeviceManager.IsFullScreen = Global.fullScreen;
+
+            state = GameStates.Menu;
         }
 
         protected override void Initialize()
         {
-            Global.MyGameTime = new Time();
-
-            shade = new Shade(new Color(147, 152, 157), new Color(255, 255, 255), new Color(147, 152, 157), new Color(40, 50, 60));
             sky = new Sky();
-            match = new Match();
-            music = new Music();
+
+            shade = new Shade(new Color[4] {new Color(147, 152, 157), new Color(255, 255, 255), new Color(147, 152, 157), new Color(40, 50, 60)});
+
+            menu = new Menu();
 
             base.Initialize();
         }
 
-        private void loadPlayers()          
-        {                                
-            Global.players[0].LoadContent(1, 1);       
-            Global.players[1].LoadContent(1, 1);       
-        }                                       
-
         protected override void LoadContent()
         {
-            Global.MySpriteBatch = new SpriteBatch(GraphicsDevice);
+            spriteBatch = new SpriteBatch(GraphicsDevice);
 
-            sky.LoadContent();
-            loadPlayers();
-            match.LoadContent(Global.level, 0, Global.players);
-            music.LoadContent();
+            sky.LoadContent(this);
+
+            menu.LoadContent(this);
         }
 
-        protected override void UnloadContent()
+        private void NewMatch(MatchSettings matchSettings, MouseState mouseState)
         {
+            state = GameStates.Match;
+            lastMatchSettings = matchSettings;
 
+            match = new Match();
+            match.LoadContent(this, matchSettings);
+
+            state = match.Update(mouseState);
         }
 
         protected override void Update(GameTime gameTime)
         {
-            Global.MyGameTime.Update();
-            Global.AmbientalLight = shade.Update();
+            mouseState = Mouse.GetState();
+            keyboardState = Keyboard.GetState();
+
+            Global.time += Global.increment;
+
+            if (Global.time >= 360)
+            {
+                Global.time = 0;
+            }
 
             sky.Update();
-            match.Update();
-            music.Update();
+
+            light = shade.Update();
+
+            if (state == GameStates.Menu)
+            {
+                MatchSettings matchSettings = menu.Update(mouseState, keyboardState);
+
+                if (matchSettings.matchType != MatchTypes.Null)
+                {
+                    NewMatch(matchSettings, mouseState);
+                }
+            }
+            else
+            {
+                state = match.Update(mouseState);
+
+                if (state == GameStates.Menu)
+                {
+                    menu = new Menu();
+                    menu.LoadContent(this);
+                }
+                else if (state == GameStates.NewMatch)
+                {
+                    NewMatch(lastMatchSettings, mouseState);
+                }
+            }
 
             base.Update(gameTime);
         }
 
         protected override void Draw(GameTime gameTime)
         {
-            Global.MySpriteBatch.Begin();
+            sky.Draw(GraphicsDevice, spriteBatch);
 
-            sky.Draw();
-            match.Draw();
+            if (state == GameStates.Menu)
+            {
+                menu.Draw(spriteBatch, light);
+            }
+            else if(state == GameStates.Match)
+            {
+                match.Draw(spriteBatch, light);
+            }
 
-            Global.MySpriteBatch.End();
-            GraphicsDevice.Textures[0] = null;
+            spriteBatch.End();
 
             base.Draw(gameTime);
         }
 
-        protected override void OnExiting(object sender, EventArgs args)
+        protected override void OnExiting(Object sender, EventArgs args)
         {
-            Global.IsRunning = false;
-
             base.OnExiting(sender, args);
-        }
+
+            menu.StopThreads();
+        } 
+
     }
 }

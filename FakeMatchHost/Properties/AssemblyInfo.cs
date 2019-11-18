@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // Le informazioni generali relative a un assembly sono controllate dal seguente 
 // set di attributi. Per modificare le informazioni associate a un assembly
 // occorre quindi modificare i valori di questi attributi.
-[assembly: AssemblyTitle("ByloEngine")]
+[assembly: AssemblyTitle("FakeMatchHost")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("ByloEngine")]
+[assembly: AssemblyProduct("FakeMatchHost")]
 [assembly: AssemblyCopyright("Copyright ©  2012")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // Se il progetto viene esposto a COM, il GUID che segue verrà utilizzato per creare l'ID della libreria dei tipi
-[assembly: Guid("ba88afcb-3508-4522-be08-bf76eb896116")]
+[assembly: Guid("a46ebd45-bef6-4bff-8400-5b0567eeeff0")]
 
 // Le informazioni sulla versione di un assembly sono costituite dai seguenti quattro valori:
 //

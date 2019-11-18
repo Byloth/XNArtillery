@@ -1,18 +1,14 @@
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Windows.Forms;
-
 namespace XNArtillery
 {
     static class Program
     {
-        [STAThread]
-        static void Main()
+        static void Main(string[] args)
         {
-            Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new StartingForm());
+            using (MyGame runningGame = new MyGame())
+            {
+                runningGame.Run();
+            }
         }
     }
 }
