@@ -1,156 +1,159 @@
-//Codice di Bilotta Matteo; Copyright© 2011; Iniziato a programmare il 29 Settembre 2011.
-
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
-using Microsoft.Xna.Framework.Input;
-
 //using Microsoft.Xna.Framework.Audio;
 //using Microsoft.Xna.Framework.Content;
 //using Microsoft.Xna.Framework.GamerServices;
+using Microsoft.Xna.Framework.Graphics;
+//using Microsoft.Xna.Framework.Input;
 //using Microsoft.Xna.Framework.Media;
+
+using ByloEngine;
+using ByloEngine.Graphics.Effects;
+using ByloEngine.Input;
 
 namespace XNArtillery
 {
-    enum GameStates
+    public class MyGame : Game
     {
-        Menu,
-        NewMatch,
-        Match
-    }
-
-    public class MyGame : Microsoft.Xna.Framework.Game
-    {
-        private GraphicsDeviceManager graphicsDeviceManager;
-        private SpriteBatch spriteBatch;
-
-        private MouseState mouseState;
-        private KeyboardState keyboardState;
-
-        private GameStates state;
-
-        private Sky sky;
-
-        private Shade shade;
-        private Color light;
-
-        private Menu menu;
-        private Match match;
-        private MatchSettings lastMatchSettings;
-
-        public MyGame()
+        public static Size MaxResolution
         {
-            IsMouseVisible = true;
-            Content.RootDirectory = "Content";
+            get
+            {
+                return new Size(3000, 1875);
+            }
+        }
 
+        private GraphicsDeviceManager graphicsDeviceManager;
+        private RenderTarget2D bufferedScreen;
+
+        private Environment environment;
+
+        private Bloom bloom;
+
+        public float ResolutionRatio
+        {
+            get;
+            private set;
+        }
+
+        public SpriteBatch SpriteBatch
+        {
+            get;
+            private set;
+        }
+
+        public Size Resolution
+        {
+            get;
+            private set;
+        }
+
+        public KeyboardManager KeyboardManager
+        {
+            get;
+            private set;
+        }
+
+        public Time Time
+        {
+            get;
+            private set;
+        }
+
+        private void initializeGraphicsDeviceManager()
+        {
             graphicsDeviceManager = new GraphicsDeviceManager(this);
-            graphicsDeviceManager.PreferredBackBufferWidth = Global.resolution.X;
-            graphicsDeviceManager.PreferredBackBufferHeight = Global.resolution.Y;
-            graphicsDeviceManager.IsFullScreen = Global.fullScreen;
+            graphicsDeviceManager.GraphicsProfile = GraphicsProfile.HiDef;
+            graphicsDeviceManager.IsFullScreen = false;
+            graphicsDeviceManager.PreferMultiSampling = true;
+            graphicsDeviceManager.PreferredBackBufferWidth = (int)Resolution.Width;
+            graphicsDeviceManager.PreferredBackBufferHeight = (int)Resolution.Height;
+            graphicsDeviceManager.PreferredBackBufferFormat = SurfaceFormat.Vector4;
+            graphicsDeviceManager.PreferredDepthStencilFormat = DepthFormat.Depth24Stencil8;
+            graphicsDeviceManager.SynchronizeWithVerticalRetrace = true;
+        }
 
-            state = GameStates.Menu;
+        public MyGame(int width, int height)
+        {
+            Resolution = new Size(width, height);
+            ResolutionRatio = ((width / MaxResolution.Width) + (height / MaxResolution.Height)) / 2;
+
+            initializeGraphicsDeviceManager();
+
+            base.Content.RootDirectory = "Content";
         }
 
         protected override void Initialize()
         {
-            sky = new Sky();
+            KeyboardManager = new KeyboardManager();
 
-            shade = new Shade(new Color[4] {new Color(147, 152, 157), new Color(255, 255, 255), new Color(147, 152, 157), new Color(40, 50, 60)});
+            Time = new Time(this);
 
-            menu = new Menu();
+            environment = new Environment(this);
+
+            bloom = new Bloom(GraphicsDevice, Resolution, KeyboardManager);
 
             base.Initialize();
         }
 
         protected override void LoadContent()
         {
-            spriteBatch = new SpriteBatch(GraphicsDevice);
+            SpriteBatch = new SpriteBatch(GraphicsDevice);
+            bufferedScreen = new RenderTarget2D(GraphicsDevice, (int)Resolution.Width, (int)Resolution.Height);
 
-            sky.LoadContent(this);
+            Time.LoadContent(this);
 
-            menu.LoadContent(this);
-        }
+            environment.LoadContent(this);
 
-        private void NewMatch(MatchSettings matchSettings, MouseState mouseState)
-        {
-            state = GameStates.Match;
-            lastMatchSettings = matchSettings;
-
-            match = new Match();
-            match.LoadContent(this, matchSettings);
-
-            state = match.Update(mouseState);
+            bloom.LoadContent(Content);
         }
 
         protected override void Update(GameTime gameTime)
         {
-            mouseState = Mouse.GetState();
-            keyboardState = Keyboard.GetState();
-
-            Global.time += Global.increment;
-
-            if (Global.time >= 360)
+            if (base.IsActive == true)
             {
-                Global.time = 0;
-            }
+                Time.Update(gameTime);
 
-            sky.Update();
+                KeyboardManager.Update();
 
-            light = shade.Update();
-
-            if (state == GameStates.Menu)
-            {
-                MatchSettings matchSettings = menu.Update(mouseState, keyboardState);
-
-                if (matchSettings.matchType != MatchTypes.Null)
-                {
-                    NewMatch(matchSettings, mouseState);
-                }
-            }
-            else
-            {
-                state = match.Update(mouseState);
-
-                if (state == GameStates.Menu)
-                {
-                    menu = new Menu();
-                    menu.LoadContent(this);
-                }
-                else if (state == GameStates.NewMatch)
-                {
-                    NewMatch(lastMatchSettings, mouseState);
-                }
+                environment.Update(this);
             }
 
             base.Update(gameTime);
         }
 
+        private void drawOnRenderTarget()
+        {
+            GraphicsDevice.SetRenderTarget(bufferedScreen);
+
+            environment.Draw(this);
+        }
+
+        private void applyEffects()
+        {
+            bloom.Apply(GraphicsDevice, SpriteBatch, bufferedScreen);
+        }
+
+        private void drawOnScreen()
+        {
+            GraphicsDevice.SetRenderTarget(null);
+
+            SpriteBatch.Begin();
+            SpriteBatch.Draw(bufferedScreen, Vector2.Zero, Color.White);
+            SpriteBatch.End();
+
+            Time.Draw(this);
+        }
+
         protected override void Draw(GameTime gameTime)
         {
-            sky.Draw(GraphicsDevice, spriteBatch);
-
-            if (state == GameStates.Menu)
-            {
-                menu.Draw(spriteBatch, light);
-            }
-            else if(state == GameStates.Match)
-            {
-                match.Draw(spriteBatch, light);
-            }
-
-            spriteBatch.End();
+            drawOnRenderTarget();
+            applyEffects();
+            drawOnScreen();
 
             base.Draw(gameTime);
         }
-
-        protected override void OnExiting(Object sender, EventArgs args)
-        {
-            base.OnExiting(sender, args);
-
-            menu.StopThreads();
-        } 
-
     }
 }

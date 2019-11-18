@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
-    <ProjectGuid>{A6E09390-A014-4638-8902-0A5D5BFCEC86}</ProjectGuid>
+    <ProjectGuid>{F30736E8-2504-49B5-B3E1-00C62771D525}</ProjectGuid>
     <ProjectTypeGuids>{6D335F3A-9D43-41b4-9D22-F6F17C4BE596};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
@@ -13,14 +13,14 @@
     <TargetFrameworkProfile>Client</TargetFrameworkProfile>
     <XnaFrameworkVersion>v4.0</XnaFrameworkVersion>
     <XnaPlatform>Windows</XnaPlatform>
-    <XnaProfile>HiDef</XnaProfile>
-    <XnaCrossPlatformGroupID>ca83c0c9-0dd8-43ff-8a47-c2828d8f551c</XnaCrossPlatformGroupID>
+    <XnaProfile>Reach</XnaProfile>
+    <XnaCrossPlatformGroupID>aba413bb-d2e5-439c-b57b-84337f81c69e</XnaCrossPlatformGroupID>
     <XnaOutputType>Game</XnaOutputType>
-    <ApplicationIcon>Icon.ico</ApplicationIcon>
+    <ApplicationIcon>
+    </ApplicationIcon>
     <Thumbnail>
     </Thumbnail>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
-    <PublishUrl>C:\Users\Matteo\Desktop\publish\</PublishUrl>
+    <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
     <UpdateEnabled>false</UpdateEnabled>
@@ -30,20 +30,16 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <TargetCulture>it</TargetCulture>
-    <ProductName>XNArtillery</ProductName>
-    <PublisherName>Bylothink</PublisherName>
-    <ApplicationRevision>8</ApplicationRevision>
-    <ApplicationVersion>0.33.25.%2a</ApplicationVersion>
-    <UseApplicationTrust>true</UseApplicationTrust>
-    <CreateDesktopShortcut>true</CreateDesktopShortcut>
-    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
-    <Optimize>true</Optimize>
+    <Optimize>false</Optimize>
     <OutputPath>bin\x86\Debug</OutputPath>
     <DefineConstants>DEBUG;TRACE;WINDOWS</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
@@ -51,11 +47,7 @@
     <NoStdLib>true</NoStdLib>
     <UseVSHostingProcess>false</UseVSHostingProcess>
     <PlatformTarget>x86</PlatformTarget>
-    <XnaCompressContent>True</XnaCompressContent>
-    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
-    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
-    <RunCodeAnalysis>false</RunCodeAnalysis>
-    <CodeAnalysisIgnoreGeneratedCode>true</CodeAnalysisIgnoreGeneratedCode>
+    <XnaCompressContent>false</XnaCompressContent>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
     <DebugType>pdbonly</DebugType>
@@ -69,136 +61,45 @@
     <PlatformTarget>x86</PlatformTarget>
     <XnaCompressContent>true</XnaCompressContent>
   </PropertyGroup>
-  <PropertyGroup>
-    <TargetZone>LocalIntranet</TargetZone>
-  </PropertyGroup>
-  <PropertyGroup>
-    <GenerateManifests>true</GenerateManifests>
-  </PropertyGroup>
-  <PropertyGroup>
-    <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
-  </PropertyGroup>
-  <PropertyGroup>
-    <StartupObject>XNArtillery.Program</StartupObject>
-  </PropertyGroup>
-  <PropertyGroup>
-    <ManifestCertificateThumbprint>F0AB12BB6F010C0F9AFE8346FC02A8A02D9F8404</ManifestCertificateThumbprint>
-  </PropertyGroup>
-  <PropertyGroup>
-    <ManifestKeyFile>XNArtillery_TemporaryKey.pfx</ManifestKeyFile>
-  </PropertyGroup>
-  <PropertyGroup>
-    <SignManifests>false</SignManifests>
-  </PropertyGroup>
-  <PropertyGroup>
-    <SignAssembly>false</SignAssembly>
-  </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Microsoft.Xna.Framework, Version=4.0.0.0, Culture=neutral, PublicKeyToken=842cf8be1de50553, processorArchitecture=x86">
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="Microsoft.Xna.Framework.Game, Version=4.0.0.0, Culture=neutral, PublicKeyToken=842cf8be1de50553, processorArchitecture=x86">
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="Microsoft.Xna.Framework.Graphics, Version=4.0.0.0, Culture=neutral, PublicKeyToken=842cf8be1de50553, processorArchitecture=x86">
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="Microsoft.Xna.Framework.GamerServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=842cf8be1de50553, processorArchitecture=x86">
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="Microsoft.Xna.Framework.Xact, Version=4.0.0.0, Culture=neutral, PublicKeyToken=842cf8be1de50553, processorArchitecture=x86">
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="Microsoft.Xna.Framework.Video, Version=4.0.0.0, Culture=neutral, PublicKeyToken=842cf8be1de50553, processorArchitecture=x86">
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="Microsoft.Xna.Framework.Avatar, Version=4.0.0.0, Culture=neutral, PublicKeyToken=842cf8be1de50553, processorArchitecture=x86">
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="Microsoft.Xna.Framework.Net, Version=4.0.0.0, Culture=neutral, PublicKeyToken=842cf8be1de50553, processorArchitecture=x86">
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="Microsoft.Xna.Framework.Storage, Version=4.0.0.0, Culture=neutral, PublicKeyToken=842cf8be1de50553, processorArchitecture=x86">
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="mscorlib">
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="System">
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="System.Xml">
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="System.Core">
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="System.Xml.Linq">
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="System.Net">
-      <Private>False</Private>
-    </Reference>
+    <Reference Include="Microsoft.Xna.Framework, Version=4.0.0.0, Culture=neutral, PublicKeyToken=842cf8be1de50553, processorArchitecture=x86" />
+    <Reference Include="Microsoft.Xna.Framework.Game, Version=4.0.0.0, Culture=neutral, PublicKeyToken=842cf8be1de50553, processorArchitecture=x86" />
+    <Reference Include="Microsoft.Xna.Framework.Graphics, Version=4.0.0.0, Culture=neutral, PublicKeyToken=842cf8be1de50553, processorArchitecture=x86" />
+    <Reference Include="Microsoft.Xna.Framework.GamerServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=842cf8be1de50553, processorArchitecture=x86" />
+    <Reference Include="mscorlib" />
+    <Reference Include="System" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Net" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Arrow.cs" />
-    <Compile Include="Bar.cs" />
-    <Compile Include="Board.cs" />
-    <Compile Include="Breaker.cs" />
-    <Compile Include="DynamicTexture2D.cs" />
-    <Compile Include="Loading.cs" />
-    <Compile Include="MatchBoard.cs" />
-    <Compile Include="Matcher.cs" />
-    <Compile Include="MatchFinder.cs" />
-    <Compile Include="MatchHost.cs" />
-    <Compile Include="MessageBoard.cs" />
-    <Compile Include="Objectes\CheckBox.cs" />
-    <Compile Include="Engine\Animations\Fade.cs" />
-    <Compile Include="PauseBoard.cs" />
-    <Compile Include="PlayerBoard.cs" />
-    <Compile Include="Remote.cs" />
-    <Compile Include="Selector.cs" />
-    <Compile Include="Supports\Settings.cs" />
-    <Compile Include="CPU.cs" />
-    <Compile Include="Engine\Clickable.cs" />
-    <Compile Include="Engine\Collider.cs" />
-    <Compile Include="Engine\Animations\Movement.cs" />
-    <Compile Include="Human.cs" />
-    <Compile Include="MyGame.cs" />
-    <Compile Include="Objectes\Hypertext.cs" />
-    <Compile Include="Level.cs" />
-    <Compile Include="Match.cs" />
-    <Compile Include="Menu.cs" />
-    <Compile Include="NewGameBoard.cs" />
-    <Compile Include="Supports\Player.cs" />
-    <Compile Include="Engine\Animations\Shade.cs" />
-    <Compile Include="Shot.cs" />
-    <Compile Include="Environment\Sky.cs" />
-    <Compile Include="Objectes\Button.cs" />
-    <Compile Include="Environment\Clouds.cs" />
-    <Compile Include="Global.cs" />
+    <Compile Include="Background\Cloud.cs" />
+    <Compile Include="Background\Clouds.cs" />
+    <Compile Include="Background\Moon.cs" />
+    <Compile Include="Background\Sky.cs" />
+    <Compile Include="Background\Star.cs" />
+    <Compile Include="Background\Stars.cs" />
+    <Compile Include="Background\Sun.cs" />
+    <Compile Include="Environment.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Program.cs" />
-    <Compile Include="Environment\Asters.cs" />
-    <Compile Include="Environment\Stars.cs" />
-    <Compile Include="Engine\Animations\Zoom.cs" />
-    <Compile Include="Label.cs" />
-    <Compile Include="TextBox.cs" />
-    <Compile Include="TrackBar.cs" />
-    <Compile Include="WindBar.cs" />
-    <Compile Include="WinnerBoard.cs" />
+    <Compile Include="StartingProgram.cs" />
+    <Compile Include="MyGame.cs" />
+    <Compile Include="Time.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Icon.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\..\ByloEngine\ByloEngine.csproj">
-      <Project>{830672B3-BDD0-46AA-B08F-50E78EBCF2AF}</Project>
+    <ProjectReference Include="..\..\..\ByloDraw2D\ByloDraw2D.csproj">
+      <Project>{E81F28A2-6A44-4BEE-B647-39EF00966FF3}</Project>
+      <Name>ByloDraw2D</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\ByloEngine\ByloEngine.csproj">
+      <Project>{F73B2B03-87B9-46B5-956F-0D5738B85143}</Project>
       <Name>ByloEngine</Name>
     </ProjectReference>
     <ProjectReference Include="..\XNArtilleryContent\XNArtilleryContent.contentproj">
-      <Name>XNArtilleryContent</Name>
+      <Name>XNArtilleryContent %28Content%29</Name>
       <XnaReferenceType>Content</XnaReferenceType>
+      <Project>{A929C621-6EA2-487E-A584-65A583EA2975}</Project>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
@@ -228,10 +129,6 @@
       <Install>true</Install>
     </BootstrapperPackage>
   </ItemGroup>
-  <ItemGroup>
-    <None Include="Properties\app.manifest" />
-  </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\XNA Game Studio\Microsoft.Xna.GameStudio.targets" />
   <!--
