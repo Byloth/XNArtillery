@@ -1,5 +1,29 @@
 
 --------------------------------
+	Patch 0.32.16.6		
+--------------------------------
+
+ - Gioco, grezzo e senza troppi fronzoli, completato!
+   - Introdotto HUD di gioco con barre della vita e del vento,
+      menù di pausa e fine partita (Risolto, così, il bug noto della
+      release precedente.).
+
+ - Nuovo sistema di gestione delle collisioni ad altissima precisione
+    che potrà permettere, in futuro e con qualche leggera modifica,
+    la creazione di nuovi livelli con ostacoli invisibili o,
+    viceversa, con finti ostacoli.
+
+ - Implementato il danneggiamento del terreno e delle due torri; i
+    buchi, così creati, verranno esclusi dal calcolo delle collisioni.
+
+ - Modificato il primo, ed unico, livello. Sono stati rimossi i muri
+    situati a ridosso delle due torri e sostituiti con una sola
+    collina centrale, la quale impedisce i colpi diretti, anch'essa
+    danneggiabile dai colpi dei giocatori.
+
+
+
+--------------------------------
 	Patch 0.26.7.5		
 --------------------------------
 
@@ -12,9 +36,6 @@
     Giocatore singolo, Multigiocatore e CPU vs CPU.
    - Introdotta l'influenza del vento e la possibilità di attivarla
       dal menù principale.
-
- - Modificato leggermente il primo e, per ora, l'unico livello
-    giocabile.
 
  - Nuova icona applicazione: adesso personalizzata.
 
