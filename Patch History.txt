@@ -1,3 +1,54 @@
+
+--------------------------------
+	Patch 0.13.4.4		
+--------------------------------
+
+
+ - Rimosse le condizioni meteo "alternative" introdotte con la release
+    0.8.8.3.
+ - Ottimizzato il menù principale e i pulsanti: ora non si visualizza
+    più l'effetto "flash" sui pulsanti al cambio di una "pagina".
+ - Introdotta la modalità di gioco: "CPU vs CPU". Ora è possibile
+    visualizzare un'anteprima dell'essenza base del gioco che, fino
+    alla precedente release, non si riusciva neanche a percepire.
+   - Creata l'Intelligenza Artificiale, la quale sarà il livello
+     massimo di difficoltà nella futura modalità "Player vs CPU":
+     non può sbagliare un colpo.
+ - Diminuita, leggermente, la dimensione dei caratteri dei pulsanti
+    del menù principale.
+
+
+
+--------------------------------
+	Patch 0.8.8.3		
+--------------------------------
+
+
+ - Modificato il metodo per il conteggio della versione: con il 
+    vecchio metodo questa sarebbe stata la patch 0.0.8.8.
+
+ - Introdotte parzialmente, e non ottimizzate, le condizioni
+    meteorologiche: ora, il tempo potrebbe essere nuvoloso.
+
+   - Modificata la luce ambientale: ora viene dosata in base alle
+      condizioni meteo.
+
+ - Implementato parzialmente, e non ottimizzato, lo switch tra le
+    varie "pagine" del menù principale.
+
+
+ N.B.: Vi starete chiedendo come mai ho rilasciato questa versione,
+        nonostante ci siano così tante cose parziali e non
+        ottimizzate.
+       Il motivo risiede nella versione: "0.8.8.3"; avessi aggiunto
+        qualcos'altro non sarebbe stata più così!
+       Ora voi, probabilmente, vi state chiedendo cosa abbia così
+        tanto di speciale QUESTA versione; non ci arrivate proprio?
+       Lo dico io, allora: questa release è un piiiccolo tributo agli
+        "883", un grande gruppo degli anni '90 con cui sono cresciuto!
+
+
+
 --------------------------------
 	Patch 0.0.7.5		
 --------------------------------
