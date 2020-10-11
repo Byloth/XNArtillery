@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <asmv1:assembly manifestVersion="1.0" xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:co.v2="urn:schemas-microsoft-com:clickonce.v2" xmlns="urn:schemas-microsoft-com:asm.v2" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:co.v1="urn:schemas-microsoft-com:clickonce.v1">
-  <asmv1:assemblyIdentity version="0.32.16.6" name="XNArtillery.exe" publicKeyToken="0000000000000000" language="it" processorArchitecture="x86" type="win32" />
+  <asmv1:assemblyIdentity version="0.33.25.7" name="XNArtillery.exe" publicKeyToken="0000000000000000" language="it" processorArchitecture="x86" type="win32" />
   <description asmv2:iconFile="Icon.ico" asmv2:publisher="Bylothink" asmv2:product="XNArtillery" xmlns="urn:schemas-microsoft-com:asm.v1" />
   <application />
   <entryPoint>
@@ -94,14 +94,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="XNArtillery.exe" size="137216">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="XNArtillery.exe" size="145920">
       <assemblyIdentity name="XNArtillery" version="0.26.7.5" language="neutral" processorArchitecture="x86" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>vE/SmJtvm8wfvGUdOjgBKbeN9SE=</dsig:DigestValue>
+        <dsig:DigestValue>cdY0INLQiaPYD3Vz+gRBTux4+7Y=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -114,7 +114,7 @@
       <dsig:DigestValue>NdJ1IPY8TF+N0DB6hvwOHVzgLOM=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Content\Fonts\Text.xnb" size="13730">
+  <file name="Content\Fonts\Label.xnb" size="13730">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -213,22 +213,31 @@
       <dsig:DigestValue>l53t9dUZcPZwcdVIbi+vmRacP4A=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Content\Images\Objectes\Button.xnb" size="15780">
+  <file name="Content\Images\Objectes\Buttons.xnb" size="15526">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>NCl7Njs3vq3UwSjw3U8Nh5oZJxM=</dsig:DigestValue>
+      <dsig:DigestValue>JI1vK1GtjNIsykvYwdsyy4QJzug=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Content\Images\Objectes\CheckBox.xnb" size="8500">
+  <file name="Content\Images\Objectes\CheckBox.xnb" size="14050">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>1aiAKXAIHHCaagkiShCs6QwsopA=</dsig:DigestValue>
+      <dsig:DigestValue>fEclRgnFsmt0Kivt8+7OLF4JzQQ=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Content\Images\Objectes\Cursor.xnb" size="2202">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>Riv9HGB7qYeb10Lr9s3md+/b/Ko=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Content\Images\Objectes\GenericBoard.xnb" size="241636">
@@ -258,13 +267,13 @@
       <dsig:DigestValue>8p1YPZiIBOijL7/Vmcdx3lXwpqs=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Content\Images\Objectes\Menu.xnb" size="295654">
+  <file name="Content\Images\Objectes\Menu.xnb" size="334176">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>kRDB9TUHRfxIU3/E5cyT0SFILT0=</dsig:DigestValue>
+      <dsig:DigestValue>nsu+4JELTvGFpWjcLtYqyCwXYAM=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Content\Images\Objectes\MenuBoard.xnb" size="759144">
@@ -276,6 +285,24 @@
       <dsig:DigestValue>Zz8L1FjM4iqgJ5imXbx1vpxLEL8=</dsig:DigestValue>
     </hash>
   </file>
+  <file name="Content\Images\Objectes\TextBox.xnb" size="3534">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>9o8egX+g4jWTUGsEIjIMXEdqinA=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Content\Images\Objectes\Track.xnb" size="1114">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>Vmix8PM5KY9Hm76rszNbtIIvBH4=</dsig:DigestValue>
+    </hash>
+  </file>
   <file name="Content\Images\Shots\Bullet.xnb" size="2290">
     <hash>
       <dsig:Transforms>
@@ -285,13 +312,13 @@
       <dsig:DigestValue>h0UHk+eoG+02H3i5kBXZP70mCv8=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Content\Images\Towers\Tower1.xnb" size="29046">
+  <file name="Content\Images\Towers\Tower1.xnb" size="28970">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>cSxE1uWfQOuU6jHQ+op4VPpNOLk=</dsig:DigestValue>
+      <dsig:DigestValue>LhRVvz/JKAGQbOImFunv/WVFIiM=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Icon.ico" size="97552">

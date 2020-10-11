@@ -1,5 +1,48 @@
 
 --------------------------------
+	Patch 0.33.25.7		
+--------------------------------
+
+ - Come è possibile notare dal menù di "Nuova partita", è stata
+    aggiunta la modalità di gioco via LAN: non è ancora stata
+    implementata.
+
+ - Aggiunta la possibilità di inserire il proprio Nickname in gioco;
+    presto verrà implementata la funzione di salvataggio del Nickname
+    predefinito e delle impostazioni di gioco più usate.
+
+ - Aggiunta la possibilità di selezionare la difficoltà di gioco nelle
+    modalità "Giocatore singolo" e "Demo". Nella modalità di gioco
+    "Demo" l'intelligenza dei due giocatori è identica; presto verrà
+    aggiunta l'opzione di poter selezionare due livelli diversi per i
+    due giocatori.
+
+ - Aggiunta la possibilità di selezionare la massima influenza del
+    vento durante la partita: ora è possibile regolare e giocare
+    partite con un influenza del vento con valori variabili.
+   - Diminuito il valore massimo di influenza: era considerato, in
+      alcuni momenti, troppo influente sul colpo.
+
+ - Modificato il menù principale.
+   - Sono state implementate le dissolvenze degli oggetti nella
+      schermata di "Nuova partita" per un design più accattivante e per
+      poter selezionare le proprietà corrette a seconda del tipo di
+      partita.
+   - Modificati gli oggetti presenti nello stesso: sostituita la
+      CheckBox che permetteva di attivare/disattivare l'influenza del
+      vento con una TrackBar.
+
+ - Modificata la grafica di alcuni oggetti del menù e della partita: in
+    particolare le torri, alle quali è stato aggiunto un grossolano
+    effetto "ombra".
+
+ - Corretto il bug, che causava un crash del gioco ad alcune
+    risoluzioni, che si verificava durante il disegno dei buchi alla
+    base della torre a seguito di un danneggiamento della stessa.
+
+
+
+--------------------------------
 	Patch 0.32.16.6		
 --------------------------------
 
