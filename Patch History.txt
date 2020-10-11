@@ -1,0 +1,18 @@
+--------------------------------
+	Patch 0.0.7.5		
+--------------------------------
+
+
+ - Finito di progettare il menù principale e funzioni generali del
+    gioco.
+
+ - Introdotta la "luce ambientale": nuvole, terreno, torri e pulsanti
+    sono illuminati correttamente, in base al momento della giornata.
+
+ - Introdotte stelle nel cielo notturno.
+
+ - Corretta la grafica della luna, la quale, aveva lo spicchio in
+    ombra semi-opaco.
+
+ - Corretto un bug riguardante lo scorrere del tempo, migliorato
+    e ottimizzato, notevolmente, il codice.
