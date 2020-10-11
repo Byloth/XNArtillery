@@ -1,19 +1,51 @@
 
 --------------------------------
+	Patch 0.26.7.5		
+--------------------------------
+
+ - Menù principale completato.
+   - Introdotto menù mobile per ulteriore spazio per la selezione di
+    impostazioni sia prima di ogni partita che nel menù opzioni che
+    verrà presto implementato.
+
+ - Ora sono giocabili tutte le modalità di gioco offline:
+    Giocatore singolo, Multigiocatore e CPU vs CPU.
+   - Introdotta l'influenza del vento e la possibilità di attivarla
+      dal menù principale.
+
+ - Modificato leggermente il primo e, per ora, l'unico livello
+    giocabile.
+
+ - Nuova icona applicazione: adesso personalizzata.
+
+
+ News: La prima partita UFFICIALE e completa è stata giocata Martedì 6
+        Marzo 2012 insieme a NickAmeba.
+
+
+ Bug noti: La partita non termina automaticamente dopo che l'energia
+            di uno dei due giocatori è esaurita.
+
+
+
+--------------------------------
 	Patch 0.13.4.4		
 --------------------------------
 
 
  - Rimosse le condizioni meteo "alternative" introdotte con la release
     0.8.8.3.
+
  - Ottimizzato il menù principale e i pulsanti: ora non si visualizza
     più l'effetto "flash" sui pulsanti al cambio di una "pagina".
+
  - Introdotta la modalità di gioco: "CPU vs CPU". Ora è possibile
     visualizzare un'anteprima dell'essenza base del gioco che, fino
     alla precedente release, non si riusciva neanche a percepire.
    - Creata l'Intelligenza Artificiale, la quale sarà il livello
      massimo di difficoltà nella futura modalità "Player vs CPU":
      non può sbagliare un colpo.
+
  - Diminuita, leggermente, la dimensione dei caratteri dei pulsanti
     del menù principale.
 
@@ -29,7 +61,6 @@
 
  - Introdotte parzialmente, e non ottimizzate, le condizioni
     meteorologiche: ora, il tempo potrebbe essere nuvoloso.
-
    - Modificata la luce ambientale: ora viene dosata in base alle
       condizioni meteo.
 
